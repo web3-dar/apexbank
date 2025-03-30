@@ -18,8 +18,8 @@ const Confirmation: React.FC = () => {
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");
     if (storedUser) {
-      const { name, profilePicture, pin: storedPin } = JSON.parse(storedUser);
-      setUserName(name || "User");
+      const { firstName , profilePicture, pin: storedPin } = JSON.parse(storedUser);
+      setUserName( firstName || "User");
       setUserImage(profilePicture || defaultProfile);
       setUserPin(storedPin || "");
     } else {
