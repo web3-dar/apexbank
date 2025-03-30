@@ -15,7 +15,7 @@ export const getUsers = async () => {
   return response.data.record || [];
 };
 
-// Add a new user
+
 export const addUser = async (user: any) => {
   const users = await getUsers();
   users.push(user);
