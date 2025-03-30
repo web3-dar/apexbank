@@ -109,7 +109,7 @@ const SignUp = () => {
     <input
       {...register("ssn")}
       placeholder=""
-      className="input w-full"
+      className="input w-full border py-3 border-[#ccc]"
       onChange={(e) => formatSSN(e.target.value)}
     />
   </div>
