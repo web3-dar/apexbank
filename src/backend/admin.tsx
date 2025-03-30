@@ -41,10 +41,11 @@ const Admin = () => {
     <div className="min-h-screen bg-gray-50 p-6">
       <h2 className="text-2xl font-bold text-center mb-6">Admin Panel</h2>
       {loading && <p className="text-center text-blue-500">Updating...</p>}
-
+please don't delete all the accounts, minimum of one should be left
       {/* Users Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded-lg border">
+          
           <thead className="bg-gray-200">
             <tr>
               <th className="p-3 text-left">Name</th>
