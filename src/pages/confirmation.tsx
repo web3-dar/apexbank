@@ -81,7 +81,7 @@ const Confirmation: React.FC = () => {
 
       {isLoading ? (
         <div className="flex flex-col items-center justify-center min-h-screen z-10">
-          <div className="w-16 h-16 border-4 border-orange-500 border-dotted rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-4 border-purple-500 border-dotted rounded-full animate-spin"></div>
           <p className="mt-4 text-xl font-semibold text-white">Processing...</p>
         </div>
       ) : (
@@ -91,8 +91,11 @@ const Confirmation: React.FC = () => {
             alt="User Profile"
             className="w-20 h-20 rounded-full mx-auto mb-4"
           />
-          <h1 className="text-xl font-bold text-black mb-2">{userName}</h1>
-          <p className="text-gray-500 mb-6">Please confirm your PIN to proceed</p>
+          <div  className="flex gap-2 justify-center"> 
+             <p className="mb-2 text-xl">Welcome Back</p> <h1 className="text-xl font-bold text-black mb-2"> {userName}</h1>
+          
+          </div>
+        <p className="text-gray-500 mb-6">Please confirm your PIN to proceed</p>
 
           <form onSubmit={handleSubmit} className="mb-4">
             <div className="flex justify-center items-center space-x-2 mb-4">
@@ -102,7 +105,7 @@ const Confirmation: React.FC = () => {
                 onChange={handleInputChange}
                 placeholder="Enter 4-digit PIN"
                 maxLength={4}
-                className="w-48 h-16 py-2 text-center text-xl font-semibold bg-orange-50 border border-orange-200 rounded-md outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-48 h-16 py-2 text-center text-xl font-semibold bg-purple-50 border border-purple-200 rounded-md outline-none focus:ring-2 focus:ring-purple-400"
                 disabled={lockoutTime !== null}
               />
             </div>
@@ -129,10 +132,10 @@ const Confirmation: React.FC = () => {
 
           <div className="text-sm">
             <p>
-              Forgot PIN? <span className="text-orange-500 font-semibold cursor-pointer">Reset PIN</span>
+              Forgot PIN? <span className="text-purple-500 font-semibold cursor-pointer">Reset PIN</span>
             </p>
             <p>
-              Don’t have a PIN? <span className="text-orange-500 font-semibold cursor-pointer">Create PIN</span>
+              Don’t have a PIN? <span className="text-purple-500 font-semibold cursor-pointer">Create PIN</span>
             </p>
           </div>
         </div>

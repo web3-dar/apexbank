@@ -29,7 +29,7 @@ const SettingsPage = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="w-16 h-16 border-4 border-orange-500 border-dotted rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-purple-500 border-dotted rounded-full animate-spin"></div>
         <p className="mt-4 text-xl font-semibold text-black">Processing...</p>
       </div>
     );
@@ -44,7 +44,7 @@ const SettingsPage = () => {
           </header>
 
           <div className="flex justify-center relative -mt-12">
-            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-yellow-500 shadow-md">
+            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-purple-500 shadow-md">
               <img
                 src={user?.profilePicture || '/src/assets/default-avatar.png'}
                 alt="Profile"
@@ -76,7 +76,7 @@ const SettingsPage = () => {
                       </div>
                     </div>
                     {item.action && (
-                      <button className="text-orange-500 text-sm font-semibold">{item.action}</button>
+                      <button className="text-purple-500 text-sm font-semibold">{item.action}</button>
                     )}
                   </li>
                 ))}

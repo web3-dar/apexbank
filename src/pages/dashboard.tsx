@@ -55,7 +55,7 @@ const Dashboard = () => {
             <img
               src={userImage}
               alt="Profile"
-              className="h-16 w-16 border-4 border-yellow-600 rounded-full"
+              className="h-16 w-16 border-4 border-purple-600 rounded-full"
             />
             <div>
               <h1 className="text-sm font-semibold">Hello <span className="uppercase">{userName.split(" ")[0]}!!</span>,</h1>

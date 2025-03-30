@@ -89,7 +89,7 @@ const LoginForm: React.FC = () => {
         setTimeout(() => {
           setShowPopup(false);
           navigate("/pin");
-        }, 2000);
+        }, 5000);
       } else {
         setPopupMessage("Incorrect username or password.");
         setPopupType("error");
@@ -118,7 +118,7 @@ const LoginForm: React.FC = () => {
 
       {isLoading ? (
         <div className="flex flex-col items-center justify-center min-h-screen z-10">
-          <div className="w-16 h-16 border-4 border-orange-500 border-dotted rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-4 border-purple-500 border-dotted rounded-full animate-spin"></div>
           <p className="mt-4 text-xl font-semibold text-white">Processing...</p>
         </div>
       ) : (
@@ -214,7 +214,7 @@ const LoginForm: React.FC = () => {
               </>
             ) : (
               <>
-                <div className="text-orange-400 text-6xl mb-8 p-4">
+                <div className="text-purple-400 text-6xl mb-8 p-4">
                   <FaSadCry />
                 </div>
                 <p className="text-2xl font-semibold text-black p-6">{popupMessage}</p>

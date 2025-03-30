@@ -5,8 +5,9 @@ import { FaArrowLeft, FaCreditCard } from "react-icons/fa";
 
 const SendMoney = () => {
   const [amount, setAmount] = useState("");
- 
+  const [userImage, setUserImage] = useState<string>("");
   const [user, setUser] = useState<any>(null);
+  const [userName, setUserName] = useState<string>("");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -47,6 +48,8 @@ const SendMoney = () => {
       console.log(amount)
       setAmount(parsedUser.amount); // Set initial amount
     }
+    setUserImage(user.profilePicture || "default-avatar.jpg");
+    setUserName(user.firstName || "User");
   }, []);
 
 
@@ -55,15 +58,15 @@ const SendMoney = () => {
     <>
       <div className="">
         {/* Header */}
-        <div className="bg-purple-700 text-white p-4 flex justify-between items-center sticky top-0 z-10">
-          {user && (
+        <div className="bg-purple-700  text-white p-4 flex justify-between items-center sticky top-0 z-10">
+ {user && (
             <img
-              src={user.picture}
+              src={userImage}
               alt="Profile"
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full border-2 border-white"
             />
           )}
-          <h1 className="text-lg text-white font-semibold">Dashboard</h1>
+          <h1 className="text-lg text-white font-semibold"> {userName}'s Dashboard</h1>
         </div>
 
         {/* Main Content */}

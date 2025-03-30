@@ -47,7 +47,7 @@ const PaymentPage = () => {
               onClick={() => navigate(`/payment/${payment.id}`)}
             >
               <div className="flex items-center space-x-4">
-                <div className={`flex items-center justify-center w-12 h-12 bg-orange-100 rounded-full ${payment.color}`}>
+                <div className={`flex items-center justify-center w-12 h-12 bg-purple-100 rounded-full ${payment.color}`}>
                   {payment.icon}
                 </div>
                 <span className="text-sm font-medium">{payment.name}</span>
