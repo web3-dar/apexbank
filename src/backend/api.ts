@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BIN_ID = "67e7d9648a456b79667ee363"; // Replace with your JSON Bin ID
+const BIN_ID = "67e96faa8a456b79667f78fc"; // Replace with your JSON Bin ID
 const API_KEY = "$2a$10$yti1izYQ7PKY9IhwxrQiuuIk8TZDdxM6nzYFnduMOvJtKIdyRhBB."; // Replace with your JSON Bin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
