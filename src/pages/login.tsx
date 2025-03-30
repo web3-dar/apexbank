@@ -21,28 +21,71 @@ const LoginForm: React.FC = () => {
     setPasswordVisible(!passwordVisible);
   };
 
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+  //   setPopupMessage(null);
+
+  //   try {
+  //     const users = await getUsers(); // Fetch users from backend
+  //     setIsLoading(false);
+
+  //     const user = users.find(
+  //       (user: any) => user.email === email && user.password === password
+  //     );
+
+  //     if (user) {
+  //       setPopupMessage(`Welcome Back, \n  ${user.firstName}!`);
+  //       setPopupType("success");
+  //       setPopupImage(`${user.profilePicture}`);
+  //       setShowPopup(true);
+
+  //       // Save user data in local storage
+  //       localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+  //       setTimeout(() => {
+  //         setShowPopup(false);
+  //         navigate("/pin");
+  //       }, 2000);
+  //     } else {
+  //       setPopupMessage("Incorrect username or password.");
+  //       setPopupType("error");
+  //       setPopupImage(logo);
+  //       setShowPopup(true);
+  //       setTimeout(() => setShowPopup(false), 2000);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching users:", error);
+  //     setIsLoading(false);
+  //     setPopupMessage("Login failed. Please try again.");
+  //     setPopupType("error");
+  //     setPopupImage(logo);
+  //     setShowPopup(true);
+  //     setTimeout(() => setShowPopup(false), 2000);
+  //   }
+  // };
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setPopupMessage(null);
-
+  
     try {
       const users = await getUsers(); // Fetch users from backend
       setIsLoading(false);
-
+  
       const user = users.find(
-        (user: any) => user.email === email && user.password === password
+        (user: any) => user.email.toLowerCase() === email.toLowerCase() && user.password === password
       );
-
+  
       if (user) {
         setPopupMessage(`Welcome Back, \n  ${user.firstName}!`);
         setPopupType("success");
         setPopupImage(`${user.profilePicture}`);
         setShowPopup(true);
-
+  
         // Save user data in local storage
         localStorage.setItem("loggedInUser", JSON.stringify(user));
-
+  
         setTimeout(() => {
           setShowPopup(false);
           navigate("/pin");
@@ -64,7 +107,7 @@ const LoginForm: React.FC = () => {
       setTimeout(() => setShowPopup(false), 2000);
     }
   };
-
+  
   return (
     <div
       className="flex justify-center items-center min-h-screen relative bg-cover bg-center"
