@@ -11,6 +11,9 @@ const Dashboard = () => {
   const [userImage, setUserImage] = useState<string>("");
   const [showBalance, setShowBalance] = useState<boolean>(true);
   const [userName, setUserName] = useState<string>("");
+  const [accountType, setAccountType] = useState<string>("");
+  const [subType, setSubType] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("");
 
   // Fetch logged-in user data from local storage
   useEffect(() => {
@@ -20,6 +23,9 @@ const Dashboard = () => {
       setUserAmount(user.amount || 0);
       setUserImage(user.profilePicture || "default-avatar.jpg");
       setUserName(user.firstName || "User");
+      setAccountType(user.accountType || 'Nll');
+      setSubType(user.accountSubType || "");
+      setUserEmail(user.email || "");
     }
   }, []);
 
@@ -60,6 +66,7 @@ const Dashboard = () => {
             <div>
               <h1 className="text-sm font-semibold">Hello <span className="uppercase">{userName.split(" ")[0]}!!</span>,</h1>
               <span className="text-lg font-semibold">Welcome Back</span>
+              <p className="text-[10px]">{userEmail}</p>
             </div>
           </div>
 
@@ -144,6 +151,19 @@ const Dashboard = () => {
 
             <hr />
           </div>
+
+          <span className="text-gray-700 text-2xl font-medium mb-4 px-4 lg:px-0">Account Type</span>
+
+          <div className="flex justify-evenly">
+
+            <div className="bg-white shadow-lg p-4 rounded-lg mt-2 w-[200px] hover:bg-black hover:text-white text-center uppercase font-semibold pointer">{accountType}</div>
+            <div className="bg-white shadow-lg p-4 rounded-lg mt-2 w-[200px] hover:bg-black hover:text-white text-center uppercase font-semibold pointer">{subType}</div>
+          </div>
+
+          
+
+          <div className="bg-black text-[#ccc] shadow-lg p-4 rounded-lg mt-6 w-[200px] m-auto hover:bg-white hover:text-[#000] text-center uppercase font-thin pointer"> ACCOUNT LIMIT <br /> ${userAmount / 4}.00</div>
+         
 
           {/* Right Section */}
           <div className="lg:w-2/3 mt-6 lg:mt-0">
