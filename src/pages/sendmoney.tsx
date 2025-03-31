@@ -48,6 +48,7 @@ const SendMoney = () => {
       setAmount(parsedUser.amount); // Set initial amount
       setUserImage(parsedUser.profilePicture || "default-avatar.jpg"); // Use parsedUser instead of user
       setUserName(parsedUser.firstName || "User"); // Use parsedUser instead of user
+      console.log(amount)
     } else {
       setUserImage("default-avatar.jpg"); 
       setUserName("User"); 
