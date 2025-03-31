@@ -45,13 +45,15 @@ const SendMoney = () => {
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
-      console.log(amount)
       setAmount(parsedUser.amount); // Set initial amount
+      setUserImage(parsedUser.profilePicture || "default-avatar.jpg"); // Use parsedUser instead of user
+      setUserName(parsedUser.firstName || "User"); // Use parsedUser instead of user
+    } else {
+      setUserImage("default-avatar.jpg"); 
+      setUserName("User"); 
     }
-    setUserImage(user.profilePicture || "default-avatar.jpg");
-    setUserName(user.firstName || "User");
   }, []);
-
+  
 
 
   return (
@@ -66,7 +68,10 @@ const SendMoney = () => {
               className="h-10 w-10 rounded-full border-2 border-white"
             />
           )}
-          <h1 className="text-lg text-white font-semibold"> {userName}'s Dashboard</h1>
+        <h1 className="text-lg text-white font-thin">
+  {userName ? `${userName}${userName.endsWith("'") ? "" : "'s"} Dashboard` : "Dashboard"}
+</h1>
+
         </div>
 
         {/* Main Content */}
