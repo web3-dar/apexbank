@@ -152,17 +152,25 @@ const Dashboard = () => {
             <hr />
           </div>
 
-          <span className="text-gray-700 text-2xl font-medium mb-4 px-4 lg:px-0">Account Type</span>
-
           <div className="flex justify-evenly">
 
-            <div className="bg-white shadow-lg p-4 rounded-lg mt-2 w-[200px] hover:bg-black hover:text-white text-center uppercase font-semibold pointer">{accountType}</div>
-            <div className="bg-white shadow-lg p-4 rounded-lg mt-2 w-[200px] hover:bg-black hover:text-white text-center uppercase font-semibold pointer">{subType}</div>
+            <div className="bg-black text-[#ccc] shadow-lg px-4 py-2 rounded-lg mt-2 w-[200px]   text-center  pointer">
+              <span className="text-[10px]">Account type</span> <br /><span className="uppercase font-semibold">{accountType}</span></div>
+
+            <div className="bg-black text-[#ccc] shadow-lg px-4 py-2 rounded-lg mt-2 w-[200px]   text-center  pointer">
+              <span className="text-[10px]">Account type</span> <br /><span className="uppercase font-semibold">{subType}</span></div>
+
+
+            
           </div>
 
           
 
-          <div className="bg-black text-[#ccc] shadow-lg p-4 rounded-lg mt-6 w-[200px] m-auto hover:bg-white hover:text-[#000] text-center uppercase font-thin pointer"> ACCOUNT LIMIT <br /> ${userAmount / 4}.00</div>
+          
+          <div className="bg-[#ccc] mt-7 m-auto  text-[#000] shadow-lg px-4 py-2 rounded-lg mt-2 w-[200px]   text-center  pointer">
+              <span className="text-[10px]">Limits</span> <br /><span className="uppercase font-semibold">$500,000</span></div>
+
+       
          
 
           {/* Right Section */}
