@@ -15,7 +15,7 @@ const Header: React.FC = () => {
           <Link to="/">
             <img src={logo} alt="Logo" className="h-12" />
           </Link>
-          <img src={fdc} alt="FDC Logo" width={300} />
+         
         </div>
 
         {/* Middle: Navigation Links (Only 3 links) */}
@@ -47,7 +47,11 @@ const Header: React.FC = () => {
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
+
+        
       </div>
+
+      <img src={fdc} alt="FDC Logo" width={300}  className="p-2"/>
 
       {/* Mobile Menu */}
       {isOpen && (
