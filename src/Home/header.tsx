@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         {/* Right: Button & Hamburger Menu */}
         <div className="flex items-center gap-4">
           <Link to="/login">
-            <button className="border-4 border-blue-800 px-4 py-2 rounded-full">
+            <button className="border-4 text-[10px] border-blue-800 px-4 py-2 rounded-full">
               LOG-IN
             </button>
           </Link>
