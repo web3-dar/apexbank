@@ -30,9 +30,15 @@ export default function StatComponent() {
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
             <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
-              {pieData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index]} />
-              ))}
+            <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
+            <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} dataKey="value">
+  {pieData.map((_, index) => (
+    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+  ))}
+</Pie>
+
+</Pie>
+
             </Pie>
             <Tooltip />
             <Legend />
@@ -53,6 +59,8 @@ export default function StatComponent() {
             <Line type="monotone" dataKey="savings" stroke="#8884d8" strokeWidth={2} />
           </LineChart>
         </ResponsiveContainer>
+
+       
       </div>
     </div>
   );
