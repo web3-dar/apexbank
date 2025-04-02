@@ -181,8 +181,18 @@ const SignUp = () => {
   {/* Password Fields */}
   <div>
   <label htmlFor="" className="font-semibold">4 digits Pin</label>
-    <input {...register("pin")} type="number" placeholder="" className="input w-full   border py-3 border-[#ccc]" />
-  </div>
+  <input
+    {...register("pin")}
+    type="tel"
+    pattern="\d{4}"
+    placeholder="Enter 4 digits"
+    maxLength={4}
+    inputMode="numeric"
+    className="input w-full border py-3 border-[#ccc]"
+  />
+</div>
+
+
   <div>
   <label htmlFor="" className="font-semibold">Password *</label>
     <input {...register("password")} type="password" placeholder="" className="input w-full   border py-3 border-[#ccc]" />

@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import StatComponent from "../components/stats";
 import BottomNav from "./stickyNav";
+import person from '../assets/person_1.jpg'
 // import BottomNav from "./stickyNav";
 
 const Dashboard = () => {
@@ -33,7 +34,7 @@ const Dashboard = () => {
     if (storedUser) {
       const user = JSON.parse(storedUser);
       setUserAmount(user.amount || 0);
-      setUserImage(user.profilePicture || "default-avatar.jpg");
+      setUserImage(user.profilePicture || person);
       setUserName(user.firstName || "User");
       setLastName(user.lastName || "User");
       setMiddleName(user.middleName || "User");
