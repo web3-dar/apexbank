@@ -277,7 +277,7 @@ const Dashboard = () => {
       <div> <div className="flex gap-2 p-2">
                 <button
                   className="flex  w-[200px] items-center text-white p-2 bg-blue-800 rounded-lg shadow"
-                  onClick={() => navigate("/add")}
+                  onClick={() => navigate("/deposit")}
                 >
                   <div className="bg-blue-800 p-2 rounded-lg">
                     <span className="material-icons">send</span>
