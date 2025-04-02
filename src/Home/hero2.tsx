@@ -49,14 +49,13 @@ const HelpSection = () => {
 
         {/* News Content */}
         <h3 className="text-center text-xl font-semibold text-gray-800 mb-4">IN THE NEWS</h3>
-        <h2 className="text-blue-700 text-lg text-center font-bold mt-2 mb-4">
-          APEX BANK OPENS IN KNOXVILLE
-        </h2>
-        <p className="text-gray-600 text-sm mt-8">
-          Knoxville, Tenn. – On Thursday, October 1, 2020, Apex Bank began
-          operations in South Knoxville. In August, Apex Bank entered into an
-          agreement with People’s Community Bank to buy the building...
-        </p>
+<h2 className="text-blue-700 text-lg text-center font-bold mt-2 mb-4">
+  APEX BANK OPENS IN ROME
+</h2>
+<p className="text-gray-600 text-sm mt-8">
+  Rome, Italy – On Thursday, October 1, 2020, Apex Bank began operations in central Rome. In August, Apex Bank entered into an agreement with People’s Community Bank to buy the building...
+</p>
+
 
         {/* Read More Button */}
         <div className="mt-6 text-center">

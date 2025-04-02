@@ -4,8 +4,8 @@ import {
   FaSyncAlt,
   FaEye,
   FaEyeSlash,
-  FaBell,
   FaArrowUp,
+  FaSignOutAlt,
 } from "react-icons/fa";
 import StatComponent from "../components/stats";
 import BottomNav from "./stickyNav";
@@ -25,6 +25,7 @@ const Dashboard = () => {
   const [userLastName, setLastName] = useState<string>("");
   const [useMidname, setMiddleName] = useState<string>("");
   const [AcctNum, setAcctNumber] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Fetch logged-in user data from local storage
   useEffect(() => {
@@ -42,6 +43,26 @@ const Dashboard = () => {
       setAcctNumber(user.accountNumber || "");
     }
   }, []);
+
+  const handleLogout = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      localStorage.clear();
+      sessionStorage.clear();
+      setIsLoading(false);
+      navigate('/');
+    }, 2000);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="w-16 h-16 border-4 border-purple-500 border-dotted rounded-full animate-spin"></div>
+        <p className="mt-4 text-xl font-semibold text-black">Processing...</p>
+      </div>
+    );
+  }
+
 
   const allTransactions = [
     { type: "Credit", amount: userAmount, date: "2025-02-07 09:00:00" },
@@ -99,13 +120,16 @@ const Dashboard = () => {
           </div>
 
           <div className="cursor-pointer flex gap-3 text-2xl text-gray-500 pt-8">
-            <div className="hover:text-black" onClick={refreshPage}>
-              <FaSyncAlt />
-            </div>
-            <div className="hover:text-black">
-              <FaBell />
-            </div>
-          </div>
+  <div className="hover:text-black flex flex-col items-center" onClick={refreshPage}>
+    <FaSyncAlt />
+    <span className="text-[10px]">Refresh</span>
+  </div>
+  <div className="hover:text-black text-red-500 flex flex-col items-center" onClick={handleLogout}>
+    <FaSignOutAlt />
+    <span className="text-[10px]">Logout</span>
+  </div>
+</div>
+
         </div>
 
         <hr />

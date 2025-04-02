@@ -20,7 +20,6 @@ const lineData = Array.from({ length: 6 }).map((_, index) => {
 
 console.log(lineData); // Check output in console
 
-
 export default function StatComponent() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-white shadow-lg rounded-lg">
@@ -29,16 +28,10 @@ export default function StatComponent() {
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Overview</h2>
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
-            <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
-            <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
             <Pie data={pieData} cx="50%" cy="50%" outerRadius={80} dataKey="value">
-  {pieData.map((_, index) => (
-    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-  ))}
-</Pie>
-
-</Pie>
-
+              {pieData.map((_, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
             </Pie>
             <Tooltip />
             <Legend />
@@ -59,8 +52,6 @@ export default function StatComponent() {
             <Line type="monotone" dataKey="savings" stroke="#8884d8" strokeWidth={2} />
           </LineChart>
         </ResponsiveContainer>
-
-       
       </div>
     </div>
   );
