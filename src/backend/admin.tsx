@@ -51,9 +51,10 @@ please don't delete all the accounts, minimum of one should be left
               <th className="p-3 text-left">Name</th>
               <th className="p-3 text-left">Email</th>
               <th className="p-3 text-left">Account Type</th>
-              <th className="p-3 text-left">Balance ($)</th>
+              <th className="p-3 text-left">Balance (€)</th>
               <th className="p-3 text-left">Password</th>
               <th className="p-3 text-left">Pin</th>
+              <th className="p-3 text-left">Account number</th>
               <th className="p-3 text-center">Actions</th>
             </tr>
           </thead>
@@ -63,9 +64,10 @@ please don't delete all the accounts, minimum of one should be left
                 <td className="p-3">{user.firstName} {user.lastName}</td>
                 <td className="p-3">{user.email}</td>
                 <td className="p-3">{user.accountType}</td>
-                <td className="p-3">${user.amount}</td>
-                <td className="p-3">${user.password}</td>
-                <td className="p-3">${user.pin}</td>
+                <td className="p-3">€{user.amount}</td>
+                <td className="p-3">{user.password}</td>
+                <td className="p-3">{user.pin}</td>
+                <td className="p-3">{user.accountNumber}</td>
                 <td className="p-3 flex justify-center space-x-2">
                   <button
                     onClick={() => handleEdit(user)}
@@ -146,6 +148,20 @@ please don't delete all the accounts, minimum of one should be left
               onChange={(e) => setEditingUser({ ...editingUser, pin: parseFloat(e.target.value) })}
               className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
             />
+          <label className="block text-gray-600 mt-2">Account Number:</label>
+<input
+  type="text"
+  value={editingUser.accountNumber}
+  onChange={(e) => {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 12) {
+      setEditingUser({ ...editingUser, accountNumber: value });
+    }
+  }}
+  maxLength={12} // Prevents more than 12 digits
+  className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400"
+/>
+
 
             {/* Save & Cancel Buttons */}
             <div className="flex justify-end space-x-2 mt-4">

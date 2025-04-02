@@ -8,7 +8,9 @@ import logo from "../assets/logo.png";
 
 const LoginForm: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
+  const [emailOrAccount, setEmailOrAccount] = useState("");
+
   const [password, setPassword] = useState("");
   const [popupMessage, setPopupMessage] = useState<string | null>(null);
   const [popupType, setPopupType] = useState<"success" | "error" | null>(null);
@@ -73,12 +75,17 @@ const LoginForm: React.FC = () => {
       const users = await getUsers(); // Fetch users from backend
       setIsLoading(false);
   
-      const user = users.find(
-        (user: any) => user.email.toLowerCase() === email.toLowerCase() && user.password === password
+      // Check if input is an email or an account number
+      const isEmail = emailOrAccount.includes("@"); // Check if it's an email
+      const isAccountNumber = /^\d{12}$/.test(emailOrAccount); // Check if it's a 12-digit number
+  
+      const user = users.find((user: any) => 
+        (isEmail && user.email.toLowerCase() === emailOrAccount.toLowerCase()) ||
+        (isAccountNumber && user.accountNumber === emailOrAccount)
       );
   
-      if (user) {
-        setPopupMessage(`Welcome Back, \n  ${user.firstName}!`);
+      if (user && user.password === password) {
+        setPopupMessage(`Welcome Back, \n  ${user.firstName}! \n `);
         setPopupType("success");
         setPopupImage(`${user.profilePicture}`);
         setShowPopup(true);
@@ -89,9 +96,9 @@ const LoginForm: React.FC = () => {
         setTimeout(() => {
           setShowPopup(false);
           navigate("/pin");
-        }, 5000);
+        }, 2000);
       } else {
-        setPopupMessage("Incorrect username or password.");
+        setPopupMessage("Incorrect email/account number or password.");
         setPopupType("error");
         setPopupImage(logo);
         setShowPopup(true);
@@ -107,6 +114,7 @@ const LoginForm: React.FC = () => {
       setTimeout(() => setShowPopup(false), 2000);
     }
   };
+  
   
   return (
     <div
@@ -129,21 +137,20 @@ const LoginForm: React.FC = () => {
             
 
             <form onSubmit={handleLogin}>
-              <div className="mb-6">
-                <p className="mb-2 font-semibold">Email</p>
-                <label className="flex items-center bg-gray-100 border rounded-lg px-4 py-3">
-                  <FaEnvelope className="text-gray-400 mr-3" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    required
-                    className="flex-grow bg-transparent outline-none text-sm"
-                  />
-                </label>
-              </div>
-
+            <div className="mb-6">
+  <p className="mb-2 font-semibold">Email / Account Number</p>
+  <label className="flex items-center bg-gray-100 border rounded-lg px-4 py-3">
+    <FaEnvelope className="text-gray-400 mr-3" />
+    <input
+      type="text"
+      value={emailOrAccount}
+      onChange={(e) => setEmailOrAccount(e.target.value)}
+      placeholder="Enter your email or account number"
+      required
+      className="flex-grow bg-transparent outline-none text-sm"
+    />
+  </label>
+</div>
               <div className="mb-4">
                 <div className="flex justify-between mb-2 font-semibold">
                   <p>Password</p>

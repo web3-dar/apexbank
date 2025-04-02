@@ -88,12 +88,12 @@ const allTransactions = [
       <div className="grid grid-cols-2 gap-4 mt-6">
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-sm text-gray-500">Inflow</h2>
-          <p className="text-xl font-bold text-green-500">+${inflow.toFixed(2)}</p>
+          <p className="text-xl font-bold text-green-500">+€{inflow.toFixed(2)}</p>
         </div>
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-sm text-gray-500">Outflow</h2>
           <p className="text-xl font-bold text-red-500">
-            -${Math.abs(outflow).toFixed(2)}
+            -€{Math.abs(outflow).toFixed(2)}
           </p>
         </div>
       </div>
@@ -120,7 +120,7 @@ const allTransactions = [
                 transaction.type === "Debit" ? "text-red-500" : "text-green-500"
               }`}
             >
-              {transaction.amount > 0 ? "+" : ""}
+              {transaction.amount > 0 ? "+€" : ""}
               {transaction.amount.toFixed(2)}
             </p>
           </div>
