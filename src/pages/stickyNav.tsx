@@ -137,7 +137,7 @@ const BottomNav: React.FC = () => {
             </nav>
           </div>
 
-          {/* Logout at bottom */}
+          
           <div
             className="p-6 cursor-pointer flex items-center gap-3 text-lg text-red-600 hover:text-red-800 font-semibold"
             onClick={handleLogout}
