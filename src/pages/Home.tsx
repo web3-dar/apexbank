@@ -1,9 +1,13 @@
 // import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
+import CustomerCommunications from '../components/compone';
+import Blog from '../Home/blog';
+import BlogSection from '../Home/blogsection';
 import Footer from '../Home/footer';
 import Header from '../Home/header';
-import HeroSection from '../Home/hero';
+// import HeroSection from '../Home/hero';
 import HelpSection from '../Home/hero2';
+import Hero from '../Home/newhero';
 
 // import logo from '../assets/logo.png';
 // import bgImage from '../assets/homeBG.jpg'; 
@@ -23,9 +27,14 @@ const Home: React.FC = () => {
     <>
 
     <Header/>
-    <HeroSection/>
+    {/* <HeroSection/> */}
+    <Hero/>
     <HelpSection/>
+    <CustomerCommunications/>
+    <Blog/>
+    <BlogSection/>
     <Footer/>
+    
     </>
     // <div
     //   className="relative flex flex-col items-center justify-center h-screen text-white overflow-hidden"

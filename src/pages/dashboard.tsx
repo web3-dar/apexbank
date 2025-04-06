@@ -22,10 +22,10 @@ const Dashboard = () => {
   const [userName, setUserName] = useState<string>("");
   const [accountType, setAccountType] = useState<string>("");
   const [subType, setSubType] = useState<string>("");
-  const [userEmail, setUserEmail] = useState<string>("");
+  // const [userEmail, setUserEmail] = useState<string>("");
   const [userLastName, setLastName] = useState<string>("");
   const [useMidname, setMiddleName] = useState<string>("");
-  const [AcctNum, setAcctNumber] = useState<string>("");
+  // const [AcctNum, setAcctNumber] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
   // Fetch logged-in user data from local storage
@@ -40,8 +40,8 @@ const Dashboard = () => {
       setMiddleName(user.middleName || "User");
       setAccountType(user.accountType || "Nll");
       setSubType(user.accountSubType || "");
-      setUserEmail(user.email || "");
-      setAcctNumber(user.accountNumber || "");
+      // setUserEmail(user.email || "");
+      // setAcctNumber(user.accountNumber || "");
     }
   }, []);
 
@@ -105,18 +105,18 @@ const Dashboard = () => {
             <img
               src={userImage}
               alt="Profile"
-              className="h-16 w-16 border-4 border-purple-600 rounded-full"
+              className="h-16 w-16 border-4 ml-[50px] border-purple-600 rounded-full"
             />
             <div>
-              <h1 className="text-sm font-semibold">
+              {/* <h1 className="text-sm font-semibold">
                 Hello{" "}
                 <span className="uppercase">{userName.split(" ")[0]}!!</span>,
-              </h1>
-              <span className="text-lg font-semibold">Welcome Back</span>
-              <p className="text-[10px]">{userEmail}</p>
+              </h1> */}
+              <span className="text-lg font-semibold">Welcome Back {userName}!</span>
+              {/* <p className="text-[10px]">{userEmail}</p>
               <p className="text-[13px] font-semibold ">
                 Account Number: {AcctNum}
-              </p>
+              </p> */}
             </div>
           </div>
 
