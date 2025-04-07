@@ -10,6 +10,8 @@ import {
 import StatComponent from "../components/stats";
 import BottomNav from "./stickyNav";
 import person from '../assets/person_1.jpg'
+
+import Blog from "../Home/blog";
 // import BottomNav from "./stickyNav";
 
 const Dashboard = () => {
@@ -203,14 +205,14 @@ const Dashboard = () => {
 
                 <button
                   className="flex items-center text-white p-2 bg-red-500 rounded-lg shadow"
-                  onClick={() => navigate("/loan")}
+                  onClick={() => navigate("/deposit")}
                 >
                   <div className="bg-red-500 p-2 rounded-lg">
                     <span className="material-icons">
                       account_balance_wallet
                     </span>
                   </div>
-                  <p className="ml-2 text-sm font-semibold">PAY BILLS</p>
+                  <p className="ml-2 text-sm font-semibold">ADD MONEY</p>
                 </button>
 
                 {/* <button
@@ -331,6 +333,7 @@ const Dashboard = () => {
 
 <StatComponent />
 <BottomNav/>
+<Blog/>
     </>
   );
 };

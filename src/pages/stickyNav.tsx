@@ -118,7 +118,7 @@ const BottomNav: React.FC = () => {
                 className="flex items-center space-x-2 text-gray-700 hover:text-purple-500 transition"
               >
                 <FaHome className="text-base" />
-                <span>Home</span>
+                <span>Dashboard</span>
               </Link>
               <Link
                 to="/cards"
