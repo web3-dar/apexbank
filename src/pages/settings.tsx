@@ -5,7 +5,7 @@ import { FiSettings } from "react-icons/fi";
 
 const SettingsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [user, setUser] = useState<{ firstName: string; lastName: string ; profilePicture: string } | null>(null);
+  const [user, setUser] = useState<{ firstName: string; lastName: string ; profilePicture: string ; amount : number; } | null>(null);
   const navigate = useNavigate();
   const fullName = user ? `${user.firstName} ${user.lastName}` : "";
   const [activeModal, setActiveModal] = useState<string | null>(null);
@@ -15,7 +15,7 @@ const SettingsPage = () => {
       <div className="bg-white rounded-lg p-6 w-[90%] max-w-md shadow-lg relative">
         <h2 className="text-xl font-semibold mb-4">{title}</h2>
         <div className="mb-4">{content}</div>
-        <button onClick={onClose} className="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-black">X</button>
+        <button onClick={onClose} className="mt-4 text-sm border-2 border-black text-black px-3 py-1 rounded hover:bg-black hover:text-white">X</button>
       </div>
     </div>
   );
@@ -112,9 +112,20 @@ const SettingsPage = () => {
     content={(() => {
       switch (activeModal) {
         case 'profile':
-          return <p>Edit your profile info here.</p>;
+          return <div><p>Edit your profile info here.</p>
+          <img src={user?.profilePicture} alt="" className='w-[100px] rounded-full h-[100px] border-4 border-purple-500 m-auto mt-5' />
+          First Name:<input type="text" value={user?.firstName}  className='border-2 mt-2 px-2' readOnly/> <br />
+          Last Name:<input type="text" value={user?.lastName}  className='border-2 mt-2 px-2' readOnly/>
+
+          
+          
+          
+          </div>;
         case 'limits':
-          return <p>These are your account limits.</p>;
+          return <>
+          {/* <p>These are your account limits.</p> */}
+          <p className='text-xl font-bold'> 500,000.00</p>
+          <button className='bg-black text-white px-4 py-2 mt-3 hover:bg-transparent hover:border-2 hover:border-black hover:text-black'>Upgrade Limit</button></>;
         case 'statements':
           return <p>Download your monthly statements.</p>;
         case 'referrals':

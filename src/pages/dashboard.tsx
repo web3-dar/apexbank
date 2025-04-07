@@ -316,14 +316,14 @@ const Dashboard = () => {
 
                 <button
                   className="flex  w-[200px] items-center text-white p-2 bg-red-500 rounded-lg shadow"
-                  onClick={() => navigate("/send")}
+                  onClick={() => navigate("/overview")}
                 >
                   <div className="bg-red-500 p-2 rounded-lg">
                     <span className="material-icons">
                       account_balance_wallet
                     </span>
                   </div>
-                  <p className="ml-2 text-sm font-semibold">Transfer Fund</p>
+                  <p className="ml-2 text-sm font-semibold">Invest</p>
                 </button>
 
                 

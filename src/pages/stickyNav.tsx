@@ -104,7 +104,7 @@ const BottomNav: React.FC = () => {
                 className="flex items-center space-x-2 text-gray-700 hover:text-purple-500 transition"
               >
                 <span className="material-icons">dashboard</span>
-                <span>Overview</span>
+                <span>Investment</span>
               </Link>
               <Link
                 to="/history"
