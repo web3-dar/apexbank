@@ -68,10 +68,10 @@ const Dashboard = () => {
 
 
   const allTransactions = [
-    { type: "Credit", amount: userAmount, date: "2025-02-07 09:00:00" },
-    // { type: "Credit", amount: 75000.0, date: "2025-01-02 16:00:00" },
-    // { type: "Debit", amount: -1200.0, date: "2025-02-07 14:30:00" },
-    // { type: "Credit", amount: 2000.0, date: "2025-01-01 10:00:00" },
+    { type: "Deposit", amount: 7042670.00 , date: "2025-02-11 09:00:00" },
+    { type: "Deposit", amount: 2345847.55, date: "2025-02-12 16:00:00" },
+    { type: "Deposit", amount: 2549235.35, date: "2025-02-15 14:30:00" },
+    { type: "Deposit", amount: 9529914.12, date: "2025-02-19 10:00:00" },
   ];
 
   const getGreeting = () => {
@@ -270,10 +270,15 @@ const Dashboard = () => {
                         }`}
                       >
                         {transaction.amount < 0
-                          ? `-$${Math.abs(
-                              transaction.amount
-                            ).toLocaleString()}.00`
-                          : `+€${transaction.amount.toLocaleString()}.00`}
+  ? `-$${Math.abs(transaction.amount).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`
+  : `+€${transaction.amount.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })}`
+}
                       </p>
                     </div>
                     <p className="text-sm text-gray-500">{transaction.date}</p>
