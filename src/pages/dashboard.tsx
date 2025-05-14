@@ -37,9 +37,9 @@ const Dashboard = () => {
       const user = JSON.parse(storedUser);
       setUserAmount(user.amount || 0);
       setUserImage(user.profilePicture || person);
-      setUserName(user.firstName || "User");
-      setLastName(user.lastName || "User");
-      setMiddleName(user.middleName || "User");
+      setUserName(user.firstName || "");
+      setLastName(user.lastName || "");
+      setMiddleName(user.middleName || "");
       setAccountType(user.accountType || "Nll");
       setSubType(user.accountSubType || "");
       // setUserEmail(user.email || "");
