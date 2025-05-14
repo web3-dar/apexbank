@@ -68,10 +68,10 @@ const Dashboard = () => {
 
 
   const allTransactions = [
-    { type: "Deposit", amount: 7042670.00 , date: "2025-02-11 09:00:00" },
-    { type: "Deposit", amount: 2345847.55, date: "2025-02-12 16:00:00" },
-    { type: "Deposit", amount: 2549235.35, date: "2025-02-15 14:30:00" },
-    { type: "Deposit", amount: 9529914.12, date: "2025-02-19 10:00:00" },
+    { type: "Deposit", amount: userAmount , date: "2025-02-11 09:00:00" },
+    // { type: "Deposit", amount: 2345847.55, date: "2025-02-12 16:00:00" },
+    // { type: "Deposit", amount: 2549235.35, date: "2025-02-15 14:30:00" },
+    // { type: "Deposit", amount: 9529914.12, date: "2025-02-19 10:00:00" },
   ];
 
   const getGreeting = () => {
